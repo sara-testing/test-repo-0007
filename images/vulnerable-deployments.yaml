@@ -1,0 +1,197 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-nginx
+  template:
+    metadata:
+      labels:
+        app: vulnerable-nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.16.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-redis
+  template:
+    metadata:
+      labels:
+        app: vulnerable-redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:5.0.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-postgres
+  template:
+    metadata:
+      labels:
+        app: vulnerable-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:9.6.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-mysql
+  template:
+    metadata:
+      labels:
+        app: vulnerable-mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:5.6.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-mongo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-mongo
+  template:
+    metadata:
+      labels:
+        app: vulnerable-mongo
+    spec:
+      containers:
+        - name: mongo
+          image: mongo:3.6.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-node
+  template:
+    metadata:
+      labels:
+        app: vulnerable-node
+    spec:
+      containers:
+        - name: node
+          image: node:8.0.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-httpd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-httpd
+  template:
+    metadata:
+      labels:
+        app: vulnerable-httpd
+    spec:
+      containers:
+        - name: httpd
+          image: httpd:2.4.29
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-python
+  template:
+    metadata:
+      labels:
+        app: vulnerable-python
+    spec:
+      containers:
+        - name: python
+          image: python:3.6.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-elasticsearch
+  template:
+    metadata:
+      labels:
+        app: vulnerable-elasticsearch
+    spec:
+      containers:
+        - name: elasticsearch
+          image: elasticsearch:7.0.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-rabbitmq
+  template:
+    metadata:
+      labels:
+        app: vulnerable-rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: rabbitmq:3.7.0
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vulnerable-tomcat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vulnerable-tomcat
+  template:
+    metadata:
+      labels:
+        app: vulnerable-tomcat
+    spec:
+      containers:
+        - name: tomcat
+          image: tomcat:8.5.0
